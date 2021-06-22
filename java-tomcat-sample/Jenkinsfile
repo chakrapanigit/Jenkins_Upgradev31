@@ -10,6 +10,10 @@ pipeline {
                     echo "Now Archiving the Artifacts...."
                     archiveArtifacts artifacts: '**/*.war'
                 }
+                 }
+        stage('Deploy in Staging Environment'){
+            steps{
+                build job: 'Deplot_Application_Staging'
             }
         
         }
